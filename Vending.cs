@@ -42,6 +42,16 @@ namespace CoffeeMaker
 
 
                     CoffeeLevel = CoffeeVolume;
+
+                    WaterLevel = WaterVolume;
+                }
+
+                if (WaterLevel <= 0)
+                {
+                    WaterLevel = 0;
+                }
+                else
+                {
                     WaterLevel = WaterVolume;
                 }
             }
@@ -59,7 +69,7 @@ namespace CoffeeMaker
         {
 
             bool result = false;
-            if (WaterLevel == 20 || CoffeeLevel < 18 )
+            if (WaterLevel <=0 || CoffeeLevel < 18 )
             {
                 Console.WriteLine("Resource   Finshed! Check  Water Or  Coffee");
                 throw new Exception ("Coffee  Finshed!") ;

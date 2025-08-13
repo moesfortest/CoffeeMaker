@@ -10,8 +10,8 @@ var vendingObjOne = new Vending(100, 120);
 vendingObjOne.MakeEspersso();
  waterLevel = vendingObjOne.WaterLevel;
  coffeeLevel = vendingObjOne.CoffeeLevel;
-Console.WriteLine(waterLevel);
-Console.WriteLine(coffeeLevel);
+Console.WriteLine("water level {0}:",waterLevel);
+Console.WriteLine("Coffee levele {0}:",coffeeLevel);
 Console.ReadLine();
 
 

@@ -1,4 +1,6 @@
 ﻿
+using CoffeeMaker.Models;
+
 namespace CoffeeMaker
 {
     public class Vending
@@ -63,7 +65,7 @@ namespace CoffeeMaker
 
 
 
-        public void MakeEspersso()
+        public Coffee MakeEspersso()
         {
 
             try
@@ -79,6 +81,14 @@ namespace CoffeeMaker
                     CoffeeCapacity = CoffeeCapacity - 20;
                     WaterCapcity = WaterCapcity - 50;
                     coffeeNumber++;
+                    return new Coffee();
+                   
+                }
+
+
+                else
+                {
+                    return null;
                 }
 
                /// CheckForZeroValue();
@@ -87,22 +97,10 @@ namespace CoffeeMaker
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        private void CheckForZeroValue()
-        {
-            if (WaterCapcity <= 0)
-            {
-                WaterCapcity = 0;
-            }
-
-
-            if (CoffeeLevel <= 0)
-            {
-                CoffeeCapacity = 0;
-            }
-        }
 
         private bool CheckResource()
         {
@@ -129,18 +127,21 @@ namespace CoffeeMaker
 
         }
 
-        private void BrewCoffee()
+        private Coffee BrewCoffee()
         {
+            return null;
             Console.WriteLine("BrewCoffee");
         }
 
-        private void CoffeeGrind()
+        private Coffee CoffeeGrind()
         {
+            return null;
             Console.WriteLine("CoffeeGrind");
         }
 
-        private void BoilWater()
+        private Water BoilWater()
         {
+            return null;
             Console.WriteLine("BoilWater");
         }
 

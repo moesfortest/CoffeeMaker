@@ -1,89 +1,132 @@
 ﻿
-
 namespace CoffeeMaker
 {
     public class Vending
     {
-        /// <summary>
-        /// Fill Vending  Capacity
-        /// </summary>
-        public double CoffeeVolume { get; set; }
 
-        public double WaterVolume { get; set; }
-
-
-        //Display  Level Of Coffee And Water
-        public double WaterLevel { get;private set; }
-
-
-        public double CoffeeLevel { get; private set; }
-        public Vending(double coffeeInserted,double  waterInserted)
+        private Vending(double coffeeInserted, double waterInserted) 
         {
-            CoffeeVolume= coffeeInserted;
-            WaterVolume = waterInserted;
-
-
-            CoffeeLevel = coffeeInserted;
-            WaterLevel= waterInserted;
+            CoffeeCapacity = coffeeInserted;
+            WaterCapcity = waterInserted;
         }
-        public  void  MakeEspersso()
+
+        public int coffeeNumber;
+        public static int NumberOfDevice;
+
+        public   static Vending CreatObject(double coffeeInserted, double waterInserted)
         {
             try
             {
-                var result = CheckResource(20, 50);
+                NumberOfDevice++;
+                if (NumberOfDevice <= 3)
+                {
+                    return new Vending(coffeeInserted, waterInserted);
+                }
+
+                else
+                {
+                    throw new Exception("Max Obj is 3");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+ 
+        }
+
+        /// <summary>
+        /// Fill Vending  Capacity
+        /// </summary>
+        /// 
+        private double _coffcapacity;
+
+        public double CoffeeCapacity
+        {
+            get { return _coffcapacity; }
+            set { if (value < 0) _coffcapacity = 0; else _coffcapacity = value; }
+        }
+
+        private double _watercapacity;
+
+        public double WaterCapcity
+        {
+            get { return _watercapacity; }
+            set { if (value < 0) _watercapacity = 0; else _watercapacity = value; }
+        }
+
+        //Display  Level Of Coffee And Water
+        public double WaterLevel => WaterCapcity;
+        public double CoffeeLevel => CoffeeCapacity;
+
+
+
+        public void MakeEspersso()
+        {
+
+            try
+            {
+
+                var result = CheckResource();
                 if (result == true)
                 {
                     BoilWater();
                     CoffeeGrind();
                     BrewCoffee();
 
-                    CoffeeVolume = CoffeeVolume - 20;
-                    WaterVolume = WaterVolume - 50;
-
-
-                    CoffeeLevel = CoffeeVolume;
-
-                    WaterLevel = WaterVolume;
+                    CoffeeCapacity = CoffeeCapacity - 20;
+                    WaterCapcity = WaterCapcity - 50;
+                    coffeeNumber++;
                 }
 
-                if (WaterLevel <= 0)
-                {
-                    WaterLevel = 0;
-                }
-                else
-                {
-                    WaterLevel = WaterVolume;
-                }
+               /// CheckForZeroValue();
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
-          
-
-    
         }
 
-        private bool CheckResource(double coffee, double water)
+        private void CheckForZeroValue()
+        {
+            if (WaterCapcity <= 0)
+            {
+                WaterCapcity = 0;
+            }
+
+
+            if (CoffeeLevel <= 0)
+            {
+                CoffeeCapacity = 0;
+            }
+        }
+
+        private bool CheckResource()
         {
 
             bool result = false;
-            if (WaterLevel <=0 || CoffeeLevel < 18 )
+            if (WaterLevel <= 0)
             {
-                Console.WriteLine("Resource   Finshed! Check  Water Or  Coffee");
-                throw new Exception ("Coffee  Finshed!") ;
-               
+
+                throw new Exception("WaterLevel  Finshed!");
+
+            }
+            if (CoffeeLevel <= 0)
+            {
+
+                throw new Exception("Coffee  Finshed!");
+
             }
             else
             {
                 result = true;
             }
 
-
-
             return result;
-             
+
         }
 
         private void BrewCoffee()

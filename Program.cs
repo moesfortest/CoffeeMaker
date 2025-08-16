@@ -1,25 +1,30 @@
 ﻿using CoffeeMaker;
 
-Console.WriteLine("WellCome To  CoffeeMaker");
+Console.WriteLine("*******WellCome To  CoffeeMaker****");
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.White;
+double waterLevel = 0;
+double coffeeLevel = 0;
 
-double waterLevel=0;
-double coffeeLevel=0;
+var vendingObjOne = Vending.CreatObject(800,200);
 
-var vendingObjOne = new Vending(100, 120);
 
 vendingObjOne.MakeEspersso();
- waterLevel = vendingObjOne.WaterLevel;
- coffeeLevel = vendingObjOne.CoffeeLevel;
-Console.WriteLine("water level {0}:",waterLevel);
-Console.WriteLine("Coffee levele {0}:",coffeeLevel);
+waterLevel = vendingObjOne.WaterLevel;
+coffeeLevel = vendingObjOne.CoffeeLevel;
+Console.Clear();
+Console.WriteLine("water level {0}:", waterLevel);
+Console.WriteLine("Coffee levele {0}:", coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 
 vendingObjOne.MakeEspersso();
- waterLevel = vendingObjOne.WaterLevel;
- coffeeLevel = vendingObjOne.CoffeeLevel;
+waterLevel = vendingObjOne.WaterLevel;
+coffeeLevel = vendingObjOne.CoffeeLevel;
 Console.WriteLine(waterLevel);
 Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 vendingObjOne.MakeEspersso();
@@ -27,6 +32,7 @@ waterLevel = vendingObjOne.WaterLevel;
 coffeeLevel = vendingObjOne.CoffeeLevel;
 Console.WriteLine(waterLevel);
 Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 vendingObjOne.MakeEspersso();
@@ -34,6 +40,7 @@ waterLevel = vendingObjOne.WaterLevel;
 coffeeLevel = vendingObjOne.CoffeeLevel;
 Console.WriteLine(waterLevel);
 Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 vendingObjOne.MakeEspersso();
@@ -41,6 +48,7 @@ waterLevel = vendingObjOne.WaterLevel;
 coffeeLevel = vendingObjOne.CoffeeLevel;
 Console.WriteLine(waterLevel);
 Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 vendingObjOne.MakeEspersso();
@@ -48,13 +56,84 @@ waterLevel = vendingObjOne.WaterLevel;
 coffeeLevel = vendingObjOne.CoffeeLevel;
 Console.WriteLine(waterLevel);
 Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 Console.ReadLine();
 
 
+vendingObjOne.CoffeeCapacity = vendingObjOne.CoffeeCapacity + 100;
+vendingObjOne.MakeEspersso();
+waterLevel = vendingObjOne.WaterLevel;
+coffeeLevel = vendingObjOne.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjOne.coffeeNumber);
 
 Console.ReadLine();
 
-//var vendingObjBijar = new Vending(1000, 1000);
+
+Console.ReadLine();
+/// <summary>
+/// tj
+/// </summary>
+var vendingObjTwo = Vending.CreatObject(100,200);
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.Clear();
+Console.WriteLine("water level {0}:", waterLevel);
+Console.WriteLine("Coffee levele {0}:", coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
 
 
-//var vendingObjRodbar = new Vending(1000, 9000);
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
+
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
+
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
+
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
+
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+Console.ReadLine();
+
+
+vendingObjTwo.CoffeeCapacity = vendingObjTwo.CoffeeCapacity + 100;
+vendingObjTwo.MakeEspersso();
+waterLevel = vendingObjTwo.WaterLevel;
+coffeeLevel = vendingObjTwo.CoffeeLevel;
+Console.WriteLine(waterLevel);
+Console.WriteLine(coffeeLevel);
+Console.WriteLine("You Make {0} Glass ", vendingObjTwo.coffeeNumber);
+var vendingObjtree = Vending.CreatObject(100, 200);
+var vendingObjf = Vending.CreatObject(100, 200);
+var vendingObjfive = Vending.CreatObject(100, 200);

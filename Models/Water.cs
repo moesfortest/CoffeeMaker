@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeMaker.Models
-{
-    internal class Water
+{ 
+    public  class Water
     {
     }
 }

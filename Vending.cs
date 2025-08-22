@@ -5,46 +5,9 @@ namespace CoffeeMaker
 {
     public class Vending
     {
-
-        private Vending(double coffeeInserted, double waterInserted) 
-        {
-            CoffeeCapacity = coffeeInserted;
-            WaterCapcity = waterInserted;
-        }
-
-        public int coffeeNumber;
-        public static int NumberOfDevice;
-
-        public   static Vending CreatObject(double coffeeInserted, double waterInserted)
-        {
-            try
-            {
-                NumberOfDevice++;
-                if (NumberOfDevice <= 3)
-                {
-                    return new Vending(coffeeInserted, waterInserted);
-                }
-
-                else
-                {
-                    throw new Exception("Max Obj is 3");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-                return null;
-            }
- 
-        }
-
-        /// <summary>
-        /// Fill Vending  Capacity
-        /// </summary>
-        /// 
         private double _coffcapacity;
-
+        public readonly long CaffeenPercentage;
+        public const long WaterHardLevel=98;
         public double CoffeeCapacity
         {
             get { return _coffcapacity; }
@@ -62,6 +25,45 @@ namespace CoffeeMaker
         //Display  Level Of Coffee And Water
         public double WaterLevel => WaterCapcity;
         public double CoffeeLevel => CoffeeCapacity;
+
+        public Vending(double coffeeInserted, double waterInserted,long coffeenPercentage)
+        {
+            CoffeeCapacity = coffeeInserted;
+            WaterCapcity = waterInserted;
+            CaffeenPercentage = coffeenPercentage;
+        }
+
+        public int coffeeNumber;
+        public static int NumberOfDevice;
+
+        //public static Vending CreatObject(double coffeeInserted, double waterInserted)
+        //{
+        //    try
+        //    {
+        //        NumberOfDevice++;
+        //        if (NumberOfDevice <= 3)
+        //        {
+        //            return new Vending(coffeeInserted, waterInserted);
+        //        }
+
+        //        else
+        //        {
+        //            throw new Exception("Max Obj is 3");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        Console.WriteLine(ex.Message);
+        //        return null;
+        //    }
+
+        //}
+
+        /// <summary>
+        /// Fill Vending  Capacity
+        /// </summary>
+        /// 
 
 
 
@@ -82,7 +84,7 @@ namespace CoffeeMaker
                     WaterCapcity = WaterCapcity - 50;
                     coffeeNumber++;
                     return new Coffee();
-                   
+
                 }
 
 
@@ -91,7 +93,7 @@ namespace CoffeeMaker
                     return null;
                 }
 
-               /// CheckForZeroValue();
+                /// CheckForZeroValue();
 
             }
             catch (Exception ex)

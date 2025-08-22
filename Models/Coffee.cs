@@ -8,5 +8,9 @@ namespace CoffeeMaker.Models
 {
     public class Coffee
     {
+        public  double ArabicaPercentage { get; set; }
+        public  double RobostPercentage { get; set; }
+
+        public double WaterPercentage { get; set; }
     }
 }

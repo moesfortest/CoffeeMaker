@@ -8,11 +8,34 @@ namespace CoffeeMaker
         private double _coffcapacity;
         public readonly long CaffeenPercentage;
         public const long WaterHardLevel=98;
+
+        public delegate bool SelfClean();
+        public event SelfClean SelfCleanEvent;
+
+
+ 
+
+        public void CleanDevice_SystemFire()
+        {
+
+             SelfCleanEvent.Invoke();
+           
+        }
+
+        private  bool   CleanDevice()
+        {
+            Console.WriteLine("Device Cleaned");
+            return true;
+        }
+
+        public delegate void NotifyUse(string message);
         public double CoffeeCapacity
         {
             get { return _coffcapacity; }
             set { if (value < 0) _coffcapacity = 0; else _coffcapacity = value; }
         }
+
+
 
         private double _watercapacity;
 
@@ -31,6 +54,10 @@ namespace CoffeeMaker
             CoffeeCapacity = coffeeInserted;
             WaterCapcity = waterInserted;
             CaffeenPercentage = coffeenPercentage;
+            SelfCleanEvent += CleanDevice;
+
+            Timer timer = new Timer(CleanDevice_SystemFire,3000,3000,1)
+
         }
 
         public int coffeeNumber;
@@ -83,7 +110,9 @@ namespace CoffeeMaker
                     CoffeeCapacity = CoffeeCapacity - 20;
                     WaterCapcity = WaterCapcity - 50;
                     coffeeNumber++;
+                    SendMessage("Your Coffeee  Is Ready", SendSms);
                     return new Coffee();
+
 
                 }
 
@@ -102,6 +131,27 @@ namespace CoffeeMaker
                 return null;
             }
         }
+
+        public void SendMessage(string  message, NotifyUse notify)
+        {
+            notify(message);
+
+        }
+       public  void  SendSms(string message)
+        {
+
+            Console.WriteLine("This  Mesasage  send By Sms:"+  message);
+        }
+
+        public void SendEmail(string message)
+        {
+
+            Console.WriteLine(" this message send  by email"+ message);
+        }
+
+
+
+          
 
 
         private bool CheckResource()
@@ -146,6 +196,8 @@ namespace CoffeeMaker
             return null;
             Console.WriteLine("BoilWater");
         }
+
+
 
         //private void   Payment()
         //{

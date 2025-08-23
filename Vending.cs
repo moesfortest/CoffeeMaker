@@ -56,7 +56,7 @@ namespace CoffeeMaker
             CaffeenPercentage = coffeenPercentage;
             SelfCleanEvent += CleanDevice;
 
-            Timer timer = new Timer(CleanDevice_SystemFire,3000,3000,1)
+         ////   Timer timer = new Timer(CleanDevice_SystemFire,3000,3000,1)
 
         }
 
